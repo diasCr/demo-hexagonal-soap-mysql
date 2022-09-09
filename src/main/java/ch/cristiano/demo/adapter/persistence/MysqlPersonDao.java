@@ -23,4 +23,14 @@ public class MysqlPersonDao implements PersonDao {
         this.entityManager.flush();
     }
 
+    @Override
+    public Person find(Long id) {
+        PersonEntity foundPersonEntity = this.entityManager.find(PersonEntity.class, id);
+        if (foundPersonEntity != null) {
+            return foundPersonEntity.toDomain();
+        } else {
+            throw new RuntimeException("Person not found.");
+        }
+    }
+
 }

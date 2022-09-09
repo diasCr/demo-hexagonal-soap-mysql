@@ -4,8 +4,8 @@
     <!-- Variables -->
     <variable name="DB_HOST" defaultValue="localhost" />
     <variable name="DB_PORT" defaultValue="3306" />
-    <variable name="DB_NAME" defaultValue="person" />
-    <variable name="DB_USER" defaultValue="root" />
+    <variable name="DB_NAME" defaultValue="demo" />
+    <variable name="DB_USER" defaultValue="demouser" />
     <variable name="DB_PASSWORD" defaultValue="geheim" />
 
     <!-- Enable features -->
@@ -19,7 +19,7 @@
         <fileset dir="jdbc" includes="*.jar" />
     </library>
 
-    <dataSource jndiName="jdbc/person">
+    <dataSource jndiName="jdbc/demo">
         <jdbcDriver libraryRef="jdbcDriver" />
         <properties serverName="${DB_HOST}" portNumber="${DB_PORT}" databaseName="${DB_NAME}" user="${DB_USER}" password="${DB_PASSWORD}" />
     </dataSource>

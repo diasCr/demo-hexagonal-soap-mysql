@@ -2,12 +2,14 @@ package ch.cristiano.demo.application.service;
 
 import java.util.List;
 
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 
 import ch.cristiano.demo.application.domain.Person;
 import ch.cristiano.demo.application.port.in.PersonService;
 import ch.cristiano.demo.application.port.out.PersonDao;
 
+@RequestScoped
 public class DefaultPersonService implements PersonService {
 
     @Inject
@@ -20,8 +22,7 @@ public class DefaultPersonService implements PersonService {
 
     @Override
     public Person readPersonById(Long id) {
-        // TODO Auto-generated method stub
-        return null;
+        return personDao.find(id);
     }
 
     @Override
