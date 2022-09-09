@@ -11,6 +11,7 @@ You can find a good explanation about the topic here: [Hexagonal Architecture, t
 # Openliberty installation
 ## Preconditions
 - Maven is installed
+- Database is running - see [Database configuration](#database-configuration)
 
 ## Start application server in DEV mode
     > mvn liberty:dev
@@ -23,3 +24,13 @@ Call im Browser `http://localhost:9080/demo-hexagonal-soap-mysql/person?wsdl`
 
 ## Stop application server
     > mvn liverty:stop
+
+# Database configuration
+
+Under [demo.sql](/src/main/resources/sql/demo.sql) you will find a initial script to setup the database. Addtionally you can change the configurations if necessary under [server.xml](src/main/liberty/config/server.xml)
+
+    <variable name="DB_HOST" defaultValue="localhost" />
+    <variable name="DB_PORT" defaultValue="3306" />
+    <variable name="DB_NAME" defaultValue="demo" />
+    <variable name="DB_USER" defaultValue="demouser" />
+    <variable name="DB_PASSWORD" defaultValue="geheim" />
