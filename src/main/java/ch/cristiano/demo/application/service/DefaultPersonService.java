@@ -13,7 +13,7 @@ import ch.cristiano.demo.application.port.out.PersonDao;
 public class DefaultPersonService implements PersonService {
 
     @Inject
-    private PersonDao personDao;
+    protected PersonDao personDao;
 
     @Override
     public void create(Person person) {
